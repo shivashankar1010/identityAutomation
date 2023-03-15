@@ -9,8 +9,6 @@ public class SearchData {
 
     public SearchData(WebDriver driver) {
         this.driver = driver;
-
-
     }
 
     By searchBox = By.id("vrm");
@@ -19,7 +17,6 @@ public class SearchData {
 
 
     public void searchCar(String registration) {
-
         driver.findElement(searchBox).sendKeys(registration);
         driver.findElement(acceptCookies).click();
         driver.findElement(startValuation).click();

@@ -1,6 +1,4 @@
 package com.identity.tests;
-
-
 import com.identity.pages.ReadData;
 import com.identity.pages.SearchData;
 import com.identity.pages.SearchDataResults;
@@ -23,7 +21,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-;
 
 public class IdentityTest {
 
@@ -66,15 +63,10 @@ public class IdentityTest {
 
 
         String results = resultsPage.getResultsText();
-
-
         results = results.replace("Make/model: ", "");
-
         int index = readData.indexOf("\\s+", results, 2);
-
         String inputMake = results.substring(0, index);
         String inputModel = results.substring(index + 1);
-
         String  linetovalidate = readData.readOutputData(currentDirectory + "/src/test/Resources/outputFiles", Data);
 
         String output[] = linetovalidate.split("[,]", 0);

@@ -15,7 +15,6 @@ import java.util.function.Function;
 public class SearchDataResults {
 
     WebDriver driver;
-
     public SearchDataResults(WebDriver driver) {
         this.driver = driver;
 
@@ -30,8 +29,6 @@ public class SearchDataResults {
 
         String results = null;
         if (isPresent == true) {
-
-
             Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                     .withTimeout(Duration.ofSeconds(10L))
                     .pollingEvery(Duration.ofSeconds(5L))
