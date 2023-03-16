@@ -8,3 +8,6 @@ car_output_v1.txt
 Showcase your skills so it’s easier to add more input files in future.
 Utilise any JVM based language with browser automation tools.
 Use design patterns where appropriate.
+
+To run:
+Run the IdentityTest class
