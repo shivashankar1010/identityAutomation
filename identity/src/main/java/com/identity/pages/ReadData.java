@@ -25,7 +25,6 @@ public class ReadData {
 
 
     public String readInputFile(String pathname) throws IOException {
-
         File directoryPath = new File(pathname);
         File filesList[] = directoryPath.listFiles();
         System.out.println("List of files and directories in the specified directory:");
@@ -75,7 +74,6 @@ public class ReadData {
 
         Matcher m = Pattern.compile(regexp)
                 .matcher(result);
-
         while(m.find()) {        allMatches.add(m.group());
             System.out.println(m.group());
         }

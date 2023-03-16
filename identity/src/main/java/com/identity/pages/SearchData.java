@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class SearchData {
 
     WebDriver driver;
-
     public SearchData(WebDriver driver) {
         this.driver = driver;
     }
@@ -14,7 +13,6 @@ public class SearchData {
     By searchBox = By.id("vrm");
     By acceptCookies = By.xpath("//span[text()='Accept All']/parent::*");
     By startValuation = By.xpath("//span[text()='Start valuation']/parent::*");
-
 
     public void searchCar(String registration) {
         driver.findElement(searchBox).sendKeys(registration);

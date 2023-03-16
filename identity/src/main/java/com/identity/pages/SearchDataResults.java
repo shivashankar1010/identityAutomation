@@ -17,15 +17,11 @@ public class SearchDataResults {
     WebDriver driver;
     public SearchDataResults(WebDriver driver) {
         this.driver = driver;
-
-
     }
 
     By CarResults = By.xpath("//div[@data-test-id='your-registration-number-summary']//p[2]");
     public String getResultsText() {
-
         Boolean isPresent = driver.findElements(By.xpath("//div[@data-test-id='your-registration-number-summary']//p[2]")).size() > 0;
-
         String results = null;
         if (isPresent == true) {
             Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
