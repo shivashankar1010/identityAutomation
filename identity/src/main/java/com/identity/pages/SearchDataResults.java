@@ -22,7 +22,6 @@ public class SearchDataResults {
     }
 
     By CarResults = By.xpath("//div[@data-test-id='your-registration-number-summary']//p[2]");
-
     public String getResultsText() {
 
         Boolean isPresent = driver.findElements(By.xpath("//div[@data-test-id='your-registration-number-summary']//p[2]")).size() > 0;
