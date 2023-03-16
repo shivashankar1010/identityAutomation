@@ -54,29 +54,29 @@ public class IdentityTest {
     }
 
     @Test(enabled = true, dataProvider = "registrations")
-    public void searchTest(String Data) throws IOException, InterruptedException {
-        String inputRegistration = Data.replaceAll("\\s+", "");
+    public void searchTest(String inputData) throws IOException, InterruptedException {
+        String inputValue = inputData.replaceAll("\\s+", "");
         SearchData page = new SearchData(driver);
         ReadData readData = new ReadData();
         SearchDataResults resultsPage = new SearchDataResults(driver);
-        page.searchCar(Data);
+        page.searchCar(inputData);
 
 
         String results = resultsPage.getResultsText();
         results = results.replace("Make/model: ", "");
         int index = readData.indexOf("\\s+", results, 2);
-        String inputMake = results.substring(0, index);
-        String inputModel = results.substring(index + 1);
-        String  linetovalidate = readData.readOutputData(currentDirectory + "/src/test/Resources/outputFiles", Data);
+        String inputVehicleModel = results.substring(0, index);
+        String inputCarModel = results.substring(index + 1);
+        String  linetovalidate = readData.readOutputData(currentDirectory + "/src/test/Resources/outputFiles", inputData);
 
         String output[] = linetovalidate.split("[,]", 0);
-        String outputRegistration = output[0];
-        String outputMake = output[1];
-        String outputModel = output[2];
+        String outputValue = output[0];
+        String outputCarModel = output[1];
+        String outputVehicleModel = output[2];
 
-        Assert.assertEquals(inputRegistration, outputRegistration);
-        Assert.assertEquals(inputMake, outputMake);
-        Assert.assertEquals(inputModel, outputModel);
+        Assert.assertEquals(inputValue , outputValue);
+        Assert.assertEquals(inputVehicleModel, outputCarModel);
+        Assert.assertEquals(inputCarModel, outputVehicleModel);
     }
 
     @AfterMethod(alwaysRun = true)
